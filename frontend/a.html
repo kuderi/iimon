@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <style>
+            #container {
+                margin: 50px auto;
+                /* position: relative; */
+            }
+            #updateBtn {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        }
+
+            #fact {
+                text-align: left;
+                width: 300px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "container">
+            <p id="fact"></p>
+            <button id="updateBtn">更新</button>
+            <script>
+            $("#updateBtn").click(function() {
+                $.getJSON("https://catfact.ninja/fact", function(data) {
+                $("#fact").html(data.fact);
+                });
+            });
+            </script>
+        </div>
+    </body>
+  </html>
+
+
