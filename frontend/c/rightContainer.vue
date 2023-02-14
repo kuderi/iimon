@@ -1,24 +1,60 @@
 <template>
-    <!-- 右コンテナのテンプレート -->
-    <div id="right-container">
-      <!-- 右ボックス -->
-      <div id="right-box">
-        <!-- 右側の果物を表示するためのループ -->
-        <p v-for="fruit in rightFruits" :key="fruit">{{ fruit }}</p>
+    <div id="right">
+      <div id="box">
+        <p>Apple</p>
+        <p>Grape</p>
+        <p>Strawberry</p>
+        <p>Cherry</p>
+        <p>Plum</p>
       </div>
-      <!-- 左へ移動ボタン -->
-      <button id="right-btn" @click="moveToLeft">左へ移動</button>
+      <button>左へ移動</button>
     </div>
-  </template>
-  <script>
-  import { mapState, mapActions } from "vuex";
-  // Vuex の mapState, mapActions をインポート
-  export default {
-    computed: mapState({
-     // rightFruits の状態を Vuex の state から取得
-      rightFruits: state => state.rightFruits
-    }),
-    methods: mapActions(["moveToLeft"])
-    // moveToLeft アクションを Vuex の actions から取得
-  };
-  </script>
+</template>
+
+<script>
+//   import { mapState, mapActions } from "vuex";
+//   // Vuex の mapState, mapActions をインポート
+  
+//   export default {
+//     computed: mapState({
+//       // leftFruits の状態を Vuex の state から取得
+//       leftFruits: state => state.leftFruits
+//     }),
+//     methods: mapActions(["moveToRight"])
+//     // moveToRight アクションを Vuex の actions から取得
+//   };
+</script>
+
+<style scoped>
+#right {
+    width: 300px;
+    height: 500px;
+}
+
+#box {
+    width: 100%;
+    height: 100%;
+    border: 1px solid navy;
+    display: inline-block;
+    text-align: center;
+}
+p {
+    width: 80%;
+    border-bottom: solid 1px navy;
+    margin: 0 auto;
+    line-height: 50px;
+    display: block;
+}
+
+button {
+    background-color: navy;
+    color: white;
+    margin: 30px auto;
+    height: 40px;
+    width: 150px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    border: none;
+}
+</style>
