@@ -1,17 +1,11 @@
-import Vue from "vue";
-import Vuex from "vuex";
+// Vuexストアのエントリーポイント
+import { createStore } from 'vuex'
 
-// VueアプリケーションにVuexを登録する
-Vue.use(Vuex);
-
-// Vuexストアをエクスポートする
-export default new Vuex.Store({
-  // アプリケーションの状態を保持する
+export default createStore({
   state: {
     leftFruits: ["Apple", "Grape", "Strawberry", "Cherry", "Plum"],
     rightFruits: ["Watermelon", "Banana", "Peach"]
   },
-  // 状態を変更するミューテーション
   mutations: {
     moveToRight(state, fruit) {
       state.leftFruits.splice(state.leftFruits.indexOf(fruit), 1);

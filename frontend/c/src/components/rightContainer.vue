@@ -1,28 +1,23 @@
 <template>
     <div id="right">
       <div id="box">
-        <p>Apple</p>
-        <p>Grape</p>
-        <p>Strawberry</p>
-        <p>Cherry</p>
-        <p>Plum</p>
+        <p v-for="(Fruit, index) in rightFruits" :key="index">{{ Fruit }}</p>
       </div>
-      <button>左へ移動</button>
+      <!-- <button @click="moveToLeft">左へ移動</button> -->
+      <button @click="moveToLeft(rightFruits[rightFruits.length - 1])">左へ移動</button>
     </div>
 </template>
 
 <script>
-//   import { mapState, mapActions } from "vuex";
-//   // Vuex の mapState, mapActions をインポート
-  
-//   export default {
-//     computed: mapState({
-//       // leftFruits の状態を Vuex の state から取得
-//       leftFruits: state => state.leftFruits
-//     }),
-//     methods: mapActions(["moveToRight"])
-//     // moveToRight アクションを Vuex の actions から取得
-//   };
+  import { mapState, mapActions } from "vuex";
+  export default {
+    computed: mapState({
+      rightFruits: state => state.rightFruits
+    }),
+    methods: mapActions(["moveToLeft"])
+
+    // moveToRight アクションを Vuex の actions から取得
+  };
 </script>
 
 <style scoped>

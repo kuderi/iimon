@@ -1,7 +1,7 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <div id ='Container'>
+  <div id ='app'>
     <leftContainer/>
     <rightContainer/>
   </div>
@@ -15,7 +15,6 @@ import rightContainer from './components/rightContainer.vue'
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
     'leftContainer': leftContainer ,
     'rightContainer': rightContainer
   },
@@ -23,16 +22,7 @@ export default {
 </script>
 
 <style scoped>
-  /* #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  } */
-
-  #Container {
+  #app {
     width: 700px;
     margin: 50px auto;
     display: flex;
